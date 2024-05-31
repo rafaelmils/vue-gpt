@@ -2,7 +2,7 @@
   import { onBeforeUnmount, onMounted, ref, Ref } from 'vue'
 
   const loadingText: Ref<string> = ref('Loading')
-  const interval: Ref<number> = ref(0)
+  const interval: Ref<any> = ref(0)
 
   onMounted(() => {
     const loadingTexts = ['Loading', 'Loading.', 'Loading..', 'Loading...']

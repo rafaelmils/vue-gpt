@@ -1,8 +1,11 @@
 <script setup lang="ts">
   import { Configuration, OpenAIApi } from 'openai'
   import { ref, Ref } from 'vue'
+  import { useRoute } from 'vue-router'
   import HighlightJs from './HighlightJs.vue'
   import LoadingText from './LoadingText.vue'
+
+const route = useRoute()
 
   enum Role {
     User = 'user',
@@ -13,8 +16,11 @@
    * OpenAI API Key Configuration
    */
   const configuration = new Configuration({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    // apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    apiKey: window.localStorage.getItem('apiKey') ?? '',
   })
+
+  // const kal = route?.path
 
   /**
    * Variables
